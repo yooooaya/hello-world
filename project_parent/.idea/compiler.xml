@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="project_common" />
+        <module name="project_service_system" />
+        <module name="project_gateway_system" />
+        <module name="project_service_file" />
+        <module name="goods_api" />
+        <module name="project_common_db" />
+        <module name="service_system" />
+        <module name="project_eureka" />
+        <module name="project_web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="project_service_goods_api" target="8" />
+      <module name="project_service_system" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="goods_api" options="-parameters" />
+      <module name="project_common" options="-parameters" />
+      <module name="project_common_db" options="-parameters" />
+      <module name="project_eureka" options="-parameters" />
+      <module name="project_gateway" options="-parameters" />
+      <module name="project_gateway_system" options="-parameters" />
+      <module name="project_service" options="-parameters" />
+      <module name="project_service_file" options="-parameters" />
+      <module name="project_service_system" options="-parameters" />
+      <module name="project_web" options="-parameters" />
+      <module name="service_system" options="-parameters" />
+    </option>
+  </component>
+</project>
