@@ -33,6 +33,20 @@ spring:
         - Path=/system/**
         filters:
         - StripPrefix= 1
+        #用户微服务
+      - id: user
+        uri: lb://user
+        predicates:
+        - Path=/user/**,/address/**,/areas/**,/cities/**,/provinces/**
+        filters:
+        - StripPrefix=0
+        #认证微服务
+      - id: user-auth
+        uri: lb://user-auth
+        predicates:
+        - Path=/oauth/**
+        filters:
+        - StripPrefix=0
 server:
   port: 9101
 eureka:

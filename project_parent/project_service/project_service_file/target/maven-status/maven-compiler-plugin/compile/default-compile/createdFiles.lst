@@ -1,0 +1,4 @@
+org\example\file\controller\FileController.class
+org\example\file\pojo\FastDFSFile.class
+org\example\file\util\FastDFSClient.class
+org\example\FileApplication.class

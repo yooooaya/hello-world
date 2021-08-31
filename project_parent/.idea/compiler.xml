@@ -2,39 +2,76 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="project_service_goods" />
+        <module name="project_service_page" />
+        <module name="project_service_system_api" />
+        <module name="project_user_oauth" />
+        <module name="project_service_order_api" />
+        <module name="project_web_order" />
+        <module name="project_service_order" />
         <module name="project_common" />
+        <module name="project_canal" />
         <module name="project_service_system" />
+        <module name="project_service_user_api" />
+        <module name="project_gateway_web" />
         <module name="project_gateway_system" />
+        <module name="search" />
+        <module name="project_service_search" />
         <module name="project_service_file" />
-        <module name="goods_api" />
+        <module name="spring-boot-starter-canal-master" />
+        <module name="project_service_goods_api" />
         <module name="project_common_db" />
-        <module name="service_system" />
+        <module name="project_service_business" />
+        <module name="project_service_user" />
         <module name="project_eureka" />
-        <module name="project_web" />
+        <module name="project_service_search_api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="project_service_goods_api" target="8" />
-      <module name="project_service_system" target="8" />
+      <module name="canal" target="8" />
+      <module name="project_service_search1" target="8" />
+      <module name="search" target="8" />
+      <module name="spring-boot-starter-canal-master" target="8" />
+      <module name="starter-canal" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="goods_api" options="-parameters" />
+      <module name="canal" options="-parameters" />
+      <module name="project_canal" options="-parameters" />
       <module name="project_common" options="-parameters" />
       <module name="project_common_db" options="-parameters" />
       <module name="project_eureka" options="-parameters" />
       <module name="project_gateway" options="-parameters" />
       <module name="project_gateway_system" options="-parameters" />
+      <module name="project_gateway_web" options="-parameters" />
+      <module name="project_parent" options="-parameters" />
       <module name="project_service" options="-parameters" />
+      <module name="project_service_business" options="-parameters" />
       <module name="project_service_file" options="-parameters" />
+      <module name="project_service_goods" options="-parameters" />
+      <module name="project_service_goods_api" options="-parameters" />
+      <module name="project_service_order" options="-parameters" />
+      <module name="project_service_order_api" options="-parameters" />
+      <module name="project_service_page" options="-parameters" />
+      <module name="project_service_search" options="-parameters" />
+      <module name="project_service_search1" options="-parameters" />
+      <module name="project_service_search_api" options="-parameters" />
       <module name="project_service_system" options="-parameters" />
+      <module name="project_service_system_api" options="-parameters" />
+      <module name="project_service_user" options="-parameters" />
+      <module name="project_service_user_api" options="-parameters" />
+      <module name="project_user_oauth" options="-parameters" />
       <module name="project_web" options="-parameters" />
-      <module name="service_system" options="-parameters" />
+      <module name="project_web_order" options="-parameters" />
+      <module name="search" options="-parameters" />
+      <module name="spring-boot-starter-canal-master" options="-parameters" />
+      <module name="starter-canal" options="-parameters" />
     </option>
   </component>
 </project>

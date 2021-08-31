@@ -6,13 +6,18 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/project_service/goods_api/pom.xml" />
+        <option value="$PROJECT_DIR$/project_service/project_service_search/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/canal/pom.xml" />
+        <option value="$PROJECT_DIR$/project_service/project_service_search1/pom.xml" />
         <option value="$PROJECT_DIR$/project_service_api/goods_api/pom.xml" />
         <option value="$PROJECT_DIR$/project_service_goods_api/pom.xml" />
         <option value="$PROJECT_DIR$/project_service_system/pom.xml" />
+        <option value="$PROJECT_DIR$/search/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-starter-canal-master/pom.xml" />
       </set>
     </option>
   </component>

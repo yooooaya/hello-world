@@ -12,8 +12,13 @@
     <artifactId>project_service_api</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>goods_api</module>
+        <module>project_service_goods_api</module>
+        <module>project_service_search_api</module>
+        <module>project_service_system_api</module>
+        <module>project_service_user_api</module>
+        <module>project_service_order_api</module>
     </modules>
+
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

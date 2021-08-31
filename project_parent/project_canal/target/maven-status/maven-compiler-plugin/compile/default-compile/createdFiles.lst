@@ -1,0 +1,4 @@
+org\example\canal\listener\SpuListener.class
+org\example\canal\config\RabbitMQConfig.class
+org\example\canal\listener\BusinessListener.class
+org\example\canal\CanalApplication.class

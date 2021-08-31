@@ -1,0 +1,10 @@
+org\example\goods\feign\SkuFeign.class
+org\example\goods\pojo\Spu.class
+org\example\goods\feign\CategoryFeign.class
+org\example\goods\pojo\CategoryBrand.class
+org\example\goods\feign\SpuFeign.class
+org\example\goods\pojo\Spec.class
+org\example\goods\pojo\Goods.class
+org\example\goods\pojo\Sku.class
+org\example\goods\pojo\Category.class
+org\example\goods\pojo\Brand.class

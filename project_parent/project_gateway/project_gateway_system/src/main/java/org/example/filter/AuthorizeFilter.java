@@ -1,6 +1,8 @@
 package org.example.filter;
 
+
 import org.example.util.JwtUtil;
+import org.example.util.UrlsUtil;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -12,46 +14,47 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+
 /**
- * 鉴权过滤器 验证token
+ * 网关认证过滤器实现
  */
 @Component
-public class AuthorizeFilter implements GlobalFilter, Ordered {
-    private static final String AUTHORIZE_TOKEN = "token";
+public class AuthorizeFilter implements GlobalFilter,Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        //1. 获取请求
+        //1.获取请求对象
         ServerHttpRequest request = exchange.getRequest();
-        //2. 则获取响应
+        //2.获取响应对象
         ServerHttpResponse response = exchange.getResponse();
-        //3. 如果是登录请求则放行
-        if (request.getURI().getPath().contains("/admin/login")) {
+        //3.判断当前的请求是否为登录请求，如果是，则直接放行
+        String url=request.getURI().getPath();
+        if(url.contains("/admin/login")||UrlsUtil.hasAuth(url)){
             return chain.filter(exchange);
         }
-        //4. 获取请求头
+        //4.获取当前的所有请求头信息
         HttpHeaders headers = request.getHeaders();
-        //5. 请求头中获取令牌
-        String token = headers.getFirst(AUTHORIZE_TOKEN);
-
-        //6. 判断请求头中是否有令牌
-        if (StringUtils.isEmpty(token)) {
-            //7. 响应中放入返回的状态吗, 没有权限访问
+        //5.获取jwt令牌信息
+       /* Set<Map.Entry<String, List<String>>> entries = headers.entrySet();
+        for (Map.Entry<String, List<String>> t: entries) {
+            System.out.println("key:"+t.getKey()+",value:"+t.getValue());
+        }*/
+        String jwtToken = headers.getFirst("token");
+        //6.判断当前令牌是否存在，如果不存在，则向客户端方位错误提示信息
+        if(StringUtils.isEmpty(jwtToken)){
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
-            //8. 返回
             return response.setComplete();
         }
-
-        //9. 如果请求头中有令牌则解析令牌
         try {
-            JwtUtil.parseJWT(token);
-        } catch (Exception e) {
-            e.printStackTrace();
-            //10. 解析jwt令牌出错, 说明令牌过期或者伪造等不合法情况出现
+            //7.如果令牌存在，则校验令牌是否合法，如果不合法，则向客户端返回错误提示信息
+            JwtUtil.parseJWT(jwtToken);
+        }catch (Exception e){
+            //令牌解析失败
+            //向客户端返回错误提示信息
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
-            //11. 返回
             return response.setComplete();
         }
-        //12. 放行
+
+        //8.如果令牌合法，则放行
         return chain.filter(exchange);
     }
 

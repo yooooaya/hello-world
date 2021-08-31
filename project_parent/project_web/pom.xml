@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>project_web</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>project_web_order</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

@@ -22,8 +22,11 @@
         <module>project_service_api</module>
         <module>project_common</module>
         <module>project_common_db</module>
-        <module>project_service_file</module>
-        <module>project_service_system</module>
+
+
+        <module>project_canal</module>
+        <module>project_user_oauth</module>
+
 
     </modules>
 
